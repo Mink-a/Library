@@ -41,8 +41,8 @@
           <label for="status" class="block text-sm font-medium text-gray-700">Status</label>
           <div class="mt-1">
             <select name="status" id="status" class="w-full">
-              <option value="read">READ</option>
-              <option value="not-read">NOT READ</option>
+              <option value="READ">READ</option>
+              <option value="NOT READ">NOT READ</option>
             </select>
           </div>
         </div>
@@ -65,7 +65,7 @@
               <th class="w-16 p-3 text-sm font-semibold tracking-wide text-left hidden sm:table-cell">DELETE</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-gray-200">
+          <tbody id="tbody" class="divide-y divide-gray-200">
             <tr>
               <td class="p-3 text-sm text-gray-700 whitespace-nowrap">HarryPotter</td>
               <td class="p-3 text-sm text-gray-700 whitespace-nowrap">JKRolling</td>
@@ -77,22 +77,13 @@
                   class="p-1.5 text-xs bg-red-200 text-red-700 bg-opacity-70 rounded font-semibold uppercase tracking-wider">DELETE</span>
               </td>
             </tr>
-            <tr>
-              <td class="p-3 text-sm text-gray-700 whitespace-nowrap">DavinciCode</td>
-              <td class="p-3 text-sm text-gray-700 whitespace-nowrap">DBrown</td>
-              <td class="p-3 text-sm text-gray-700 whitespace-nowrap hidden sm:table-cell">543</td>
-              <td class="p-3 text-sm text-gray-700 whitespace-nowrap"><span
-                  class="p-1.5 text-xs bg-gray-200 text-gray-700 bg-opacity-70 rounded font-semibold uppercase tracking-wider">read</span>
-              </td>
-              <td class="p-3 text-sm text-gray-700 whitespace-nowrap hidden sm:table-cell"><span
-                  class="p-1.5 text-xs bg-red-200 text-red-700 bg-opacity-70 rounded font-semibold uppercase tracking-wider">DELETE</span>
-              </td>
-            </tr>
           </tbody>
         </table>
       </div>
     </div>
   </div>
+
+  <script src="app.js"></script>
 </body>
 
 </html>
