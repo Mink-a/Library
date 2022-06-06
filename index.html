@@ -1,106 +1,98 @@
 <!DOCTYPE html>
 <html lang="en" class="font-['Raleway']">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <title>Simple Library</title>
-  </head>
-  <body>
-    <div class="container mx-auto max-w-3xl">
-      <!-- From
-      ---------------------------- -->
-      <form>
-        <div class="flex flex-col mb-2">
-          <label for="title">Title</label>
-          <input
-            type="text"
-            name="title"
-            id="title"
-            class="bg-slate-100 border py-2 px-3"
-          />
-        </div>
-        <div class="flex flex-col mb-2">
-          <label for="author">Author</label>
-          <input
-            type="text"
-            name="author"
-            id="author"
-            class="bg-slate-100 border py-2 px-3"
-          />
-        </div>
-        <div class="flex flex-col mb-2">
-          <label for="status">Status</label>
-          <select
-            name="status"
-            id="status"
-            class="bg-slate-100 border py-2 px-3"
-          >
-            <option value="read">read</option>
-            <option value="not-read">not read</option>
-          </select>
-        </div>
-        <button class="bg-indigo-500 text-white py-2 rounded my-2 w-full">
-          Add Book
-        </button>
-      </form>
-      <!-- From End -->
 
-      <!-- Table
-      --------------------------- -->
-      <table class="table-fixed mx-auto">
-        <thead>
-          <tr class="border-b font-semibold mb-4">
-            <td class="w-full sm:w-[200px] lg:w-[1fr] text-sm py-2">Title</td>
-            <td
-              class="w-full sm:w-[200px] lg:w-[1fr] text-sm py-2 hidden sm:table-cell lg:table-cell"
-            >
-              Author
-            </td>
-            <td
-              class="w-full sm:w-[200px] lg:w-[1fr] text-sm py-2 hidden lg:table-cell"
-            >
-              Pages
-            </td>
-            <td class="w-full sm:w-[200px] lg:w-[1fr] text-sm py-2">Status</td>
-            <td
-              class="w-full sm:w-[200px] lg:w-[1fr] text-sm py-2 hidden lg:table-cell"
-            >
-              Delete
-            </td>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- One Row
-          ------------------------- -->
-          <tr class="border-b">
-            <td class="py-3">Harry Potter</td>
-            <td class="py-3 hidden sm:table-cell lg:table-cell">JK Rolling</td>
-            <td class="py-3 hidden lg:table-cell">734</td>
-            <td class="py-3">
-              <span
-                class="bg-slate-100 text-slate-600 px-3 py-1 rounded cursor-pointer"
-                >READ</span
-              >
-            </td>
-            <td class="py-3 hidden lg:table-cell">
-              <span
-                class="bg-red-400 text-white px-3 py-1 rounded cursor-pointer"
-                >DELETE</span
-              >
-            </td>
-          </tr>
-          <!-- One Row End -->
-        </tbody>
-      </table>
-      <!-- Table End -->
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <title>Simple Library</title>
+</head>
+
+<body>
+  <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-2xl">
+    <div class="bg-slate-100 py-8 px-6 shadow rounded-lg">
+      <form action="#" class="space-y-6 mb-0">
+        <div>
+          <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+          <div class="mt-1">
+            <input type="text" name="title" id="title" required class="w-full">
+          </div>
+        </div>
+
+        <div>
+          <label for="author" class="block text-sm font-medium text-gray-700">Author</label>
+          <div class="mt-1">
+            <input type="text" name="author" id="author" required class="w-full">
+          </div>
+        </div>
+
+        <div>
+          <label for="pages" class="block text-sm font-medium text-gray-700">Pages</label>
+          <div class="mt-1">
+            <input type="text" name="pages" id="pages" required class="w-full">
+          </div>
+        </div>
+
+        <div>
+          <label for="status" class="block text-sm font-medium text-gray-700">Status</label>
+          <div class="mt-1">
+            <select name="status" id="status" class="w-full">
+              <option value="read">READ</option>
+              <option value="not-read">NOT READ</option>
+            </select>
+          </div>
+        </div>
+
+        <input type="submit" value="ADD BOOK"
+          class="bg-blue-500 w-full py-3 text-white font-bold text-sm tracking-wider focus:bg-blue-600 focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">
+      </form>
     </div>
-  </body>
+
+    <div class="mt-10 p-5 h-screen bg-gray-50">
+      <h1 class="text-xl mb-4 font-bold text-center">Simple Library</h1>
+      <div class="overflow-auto rounded-lg shadow">
+        <table class="w-full">
+          <thead class="bg-white border-b-2 border-gray-300">
+            <tr>
+              <th class="p-3 text-sm font-semibold tracking-wide text-left">Title</th>
+              <th class="p-3 text-sm font-semibold tracking-wide text-left ">Author</th>
+              <th class="w-16 p-3 text-sm font-semibold tracking-wide text-left hidden sm:table-cell">Pages</th>
+              <th class="w-28 p-3 text-sm font-semibold tracking-wide text-left">Status</th>
+              <th class="w-16 p-3 text-sm font-semibold tracking-wide text-left hidden sm:table-cell">DELETE</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200">
+            <tr>
+              <td class="p-3 text-sm text-gray-700 whitespace-nowrap">HarryPotter</td>
+              <td class="p-3 text-sm text-gray-700 whitespace-nowrap">JKRolling</td>
+              <td class="p-3 text-sm text-gray-700 whitespace-nowrap hidden sm:table-cell">745</td>
+              <td class="p-3 text-sm text-gray-700 whitespace-nowrap"><span
+                  class="p-1.5 text-xs bg-gray-200 text-gray-700 bg-opacity-70 rounded font-semibold uppercase tracking-wider">not
+                  read</span></td>
+              <td class="p-3 text-sm text-gray-700 whitespace-nowrap hidden sm:table-cell"><span
+                  class="p-1.5 text-xs bg-red-200 text-red-700 bg-opacity-70 rounded font-semibold uppercase tracking-wider">DELETE</span>
+              </td>
+            </tr>
+            <tr>
+              <td class="p-3 text-sm text-gray-700 whitespace-nowrap">DavinciCode</td>
+              <td class="p-3 text-sm text-gray-700 whitespace-nowrap">DBrown</td>
+              <td class="p-3 text-sm text-gray-700 whitespace-nowrap hidden sm:table-cell">543</td>
+              <td class="p-3 text-sm text-gray-700 whitespace-nowrap"><span
+                  class="p-1.5 text-xs bg-gray-200 text-gray-700 bg-opacity-70 rounded font-semibold uppercase tracking-wider">read</span>
+              </td>
+              <td class="p-3 text-sm text-gray-700 whitespace-nowrap hidden sm:table-cell"><span
+                  class="p-1.5 text-xs bg-red-200 text-red-700 bg-opacity-70 rounded font-semibold uppercase tracking-wider">DELETE</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>
