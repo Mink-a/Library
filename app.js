@@ -31,6 +31,12 @@ const DEFAULT_BOOKS = [
     pages: 321,
     status: "NOT READ",
   },
+  {
+    title: "The Road To React",
+    author: "Robin Wieruch",
+    pages: 288,
+    status: "NOT READ",
+  },
 ];
 
 let library = [];
@@ -62,6 +68,7 @@ function addNewbookToLibrary() {
     readStatus.value
   );
   library.push(newBook);
+  updateLocalStorage();
 }
 
 // Clear Form
@@ -73,6 +80,7 @@ function clearForm() {
 
 // Render Books
 function displayBooks() {
+  checkLocalStorage();
   tableBody.innerHTML = "";
   library.forEach((book) => {
     const oneBookRow = `
@@ -135,5 +143,19 @@ tableBody.addEventListener("click", (e) => {
   if (e.target.classList.contains("read-status")) {
     changeReadStatus(bookId);
   }
+  updateLocalStorage();
   displayBooks();
 });
+
+// LOCAL STORAGE
+function updateLocalStorage() {
+  localStorage.setItem("library", JSON.stringify(library));
+}
+
+function checkLocalStorage() {
+  if (localStorage.getItem("library")) {
+    library = JSON.parse(localStorage.getItem("library"));
+  } else {
+    library = DEFAULT_BOOKS;
+  }
+}
