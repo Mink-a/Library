@@ -1,4 +1,10 @@
 const tableBody = document.querySelector("#tbody");
+// Form elements
+const form = document.querySelector("form");
+const title = document.querySelector("#title");
+const author = document.querySelector("#author");
+const pages = document.querySelector("#pages");
+const readStatus = document.querySelector("#status");
 
 const DEFAULT_BOOKS = [
   {
@@ -27,8 +33,45 @@ const DEFAULT_BOOKS = [
   },
 ];
 
-let library = DEFAULT_BOOKS;
+let library = [];
+document.addEventListener("DOMContentLoaded", displayBooks());
 
+// Create Book Object
+class Book {
+  constructor(title, author, pages, status) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.status = status;
+  }
+}
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  addNewbookToLibrary();
+  clearForm();
+  displayBooks();
+});
+
+// Add new Book to Library Array
+function addNewbookToLibrary() {
+  let newBook = new Book(
+    title.value,
+    author.value,
+    pages.value,
+    readStatus.value
+  );
+  library.push(newBook);
+}
+
+// Clear Form
+function clearForm() {
+  title.value = "";
+  author.value = "";
+  pages.value = "";
+}
+
+// Render Books
 function displayBooks() {
   tableBody.innerHTML = "";
   library.forEach((book) => {
@@ -52,8 +95,6 @@ function displayBooks() {
     tableBody.insertAdjacentHTML("afterbegin", oneBookRow);
   });
 }
-
-document.addEventListener("DOMContentLoaded", displayBooks());
 
 // Find the index of book in library
 function findBookInLibrary(library, bookTitle) {
