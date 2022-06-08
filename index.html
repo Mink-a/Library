@@ -12,47 +12,60 @@
   <title>Simple Library</title>
 </head>
 
-<body>
-  <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-2xl">
-    <div class="bg-slate-100 py-8 px-6 shadow rounded-lg">
-      <form action="#" class="space-y-6 mb-0">
-        <div>
-          <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
-          <div class="mt-1">
-            <input type="text" name="title" id="title" required class="w-full">
+<body class="bg-gray-50">
+  <div class="mx-auto mt-10 max-w-full sm:px-[5%] lg:w-full lg:max-w-screen-xl">
+    <div class="rounded-lg bg-slate-100 py-8 px-6 shadow">
+      <form action="#" class="mb-0 space-y-6">
+        <div class="sm:mx-auto sm:flex sm:space-x-6 lg:space-x-3">
+          <div class="sm:w-full lg:flex lg:w-[65%] lg:space-x-3">
+            <!-- Title -->
+            <div class="lg:w-full">
+              <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+              <div class="mt-1">
+                <input type="text" name="title" id="title" required class="w-full" />
+              </div>
+            </div>
+
+            <!-- Author -->
+            <div class="lg:w-full">
+              <label for="author" class="block text-sm font-medium text-gray-700">Author</label>
+              <div class="mt-1">
+                <input type="text" name="author" id="author" required class="w-full" />
+              </div>
+            </div>
+          </div>
+
+          <div class="sm:w-full lg:flex lg:w-[35%] lg:space-x-3">
+            <!-- Pages -->
+            <div class="lg:w-full">
+              <label for="pages" class="block text-sm font-medium text-gray-700">Pages</label>
+              <div class="mt-1">
+                <input type="text" name="pages" id="pages" required class="w-full" />
+              </div>
+            </div>
+
+            <!-- Status -->
+            <div class="lg:w-full">
+              <label for="status" class="block text-sm font-medium text-gray-700">Status</label>
+              <div class="mt-1">
+                <select name="status" id="status" class="w-full">
+                  <option value="READ">READ</option>
+                  <option value="NOT READ">NOT READ</option>
+                </select>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div>
-          <label for="author" class="block text-sm font-medium text-gray-700">Author</label>
-          <div class="mt-1">
-            <input type="text" name="author" id="author" required class="w-full">
-          </div>
+        <!-- Button -->
+        <div class="lg:flex lg:justify-end">
+          <input type="submit" value="ADD BOOK"
+            class="w-full bg-blue-500 py-3 text-sm font-bold tracking-wider text-white focus:bg-blue-600 focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 lg:inline-block lg:w-1/6" />
         </div>
-
-        <div>
-          <label for="pages" class="block text-sm font-medium text-gray-700">Pages</label>
-          <div class="mt-1">
-            <input type="text" name="pages" id="pages" required class="w-full">
-          </div>
-        </div>
-
-        <div>
-          <label for="status" class="block text-sm font-medium text-gray-700">Status</label>
-          <div class="mt-1">
-            <select name="status" id="status" class="w-full">
-              <option value="READ">READ</option>
-              <option value="NOT READ">NOT READ</option>
-            </select>
-          </div>
-        </div>
-
-        <input type="submit" value="ADD BOOK"
-          class="bg-blue-500 w-full py-3 text-white font-bold text-sm tracking-wider focus:bg-blue-600 focus:ring-2 focus:ring-blue-400 focus:ring-offset-2">
       </form>
     </div>
 
-    <div class="mt-10 p-5 h-screen bg-gray-50">
+    <div class="mt-10 h-screen bg-gray-50">
       <h1 class="text-xl mb-4 font-bold text-center">Simple Library</h1>
       <div class="overflow-auto rounded-lg shadow">
         <table class="w-full">
