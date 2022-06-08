@@ -67,15 +67,15 @@
 
     <div class="mt-10 h-screen bg-gray-50">
       <h1 class="text-xl mb-4 font-bold text-center">Simple Library</h1>
-      <div class="overflow-auto rounded-lg shadow">
+      <div id="bookList" class="py-8 px-6 overflow-auto rounded-lg shadow">
         <table class="w-full">
           <thead class="bg-white border-b-2 border-gray-300">
             <tr>
               <th class="p-3 text-sm font-semibold tracking-wide text-left">Title</th>
-              <th class="p-3 text-sm font-semibold tracking-wide text-left ">Author</th>
+              <th class="p-3 text-sm font-semibold tracking-wide text-left hidden sm:table-cell">Author</th>
               <th class="w-16 p-3 text-sm font-semibold tracking-wide text-left hidden sm:table-cell">Pages</th>
               <th class="w-28 p-3 text-sm font-semibold tracking-wide text-left">Status</th>
-              <th class="w-16 p-3 text-sm font-semibold tracking-wide text-left hidden sm:table-cell">DELETE</th>
+              <th class="w-16 p-3 text-sm font-semibold tracking-wide text-left"></th>
             </tr>
           </thead>
           <tbody id="tbody" class="divide-y divide-gray-200">

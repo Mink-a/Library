@@ -1,4 +1,5 @@
 const tableBody = document.querySelector("#tbody");
+const bookList = document.querySelector("#bookList");
 // Form elements
 const form = document.querySelector("form");
 const title = document.querySelector("#title");
@@ -86,14 +87,14 @@ function displayBooks() {
     const oneBookRow = `
     <tr>
       <td class="p-3 text-sm text-gray-700 whitespace-nowrap">${book.title}</td>
-      <td class="p-3 text-sm text-gray-700 whitespace-nowrap">${book.author}</td>
+      <td class="p-3 text-sm text-gray-700 whitespace-nowrap hidden sm:table-cell">${book.author}</td>
       <td class="p-3 text-sm text-gray-700 whitespace-nowrap hidden sm:table-cell">${book.pages}</td>
       <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
         <span class="read-status p-1.5 text-xs bg-gray-200 text-gray-700 bg-opacity-70 rounded font-semibold uppercase tracking-wider cursor-pointer">
         ${book.status}
         </span>
       </td>
-      <td class="p-3 text-sm text-gray-700 whitespace-nowrap hidden sm:table-cell">
+      <td class="p-3 text-sm text-gray-700 whitespace-nowrap">
         <span class="p-1.5 text-xs bg-red-200 text-red-700 bg-opacity-70 rounded font-semibold uppercase tracking-wider cursor-pointer">
         DELETE
         </span>
@@ -129,7 +130,7 @@ function changeReadStatus(bookId) {
 }
 // changeReadStatus(2);
 
-tableBody.addEventListener("click", (e) => {
+bookList.addEventListener("click", (e) => {
   let currentBookTitle = e.target.parentNode.parentNode.childNodes[1].innerText;
   // console.log(currentBookTitle);
   let bookId = findBookInLibrary(library, currentBookTitle);
