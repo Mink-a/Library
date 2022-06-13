@@ -6,6 +6,19 @@ const title = document.querySelector("#title");
 const author = document.querySelector("#author");
 const pages = document.querySelector("#pages");
 const readStatus = document.querySelector("#status");
+const newBookBtn = document.querySelector("#newBookBtn");
+
+newBookBtn.addEventListener("click", (e) => {
+  if (e.target.innerText === "ADD NEW BOOK") {
+    form.classList.remove("hidden");
+    e.target.classList.add("mt-4");
+    e.target.innerText = "close";
+  } else if (e.target.innerText === "CLOSE") {
+    form.classList.add("hidden");
+    e.target.classList.remove("mt-4");
+    e.target.innerText = "ADD NEW BOOK";
+  }
+});
 
 const DEFAULT_BOOKS = [
   {

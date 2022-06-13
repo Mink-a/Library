@@ -12,12 +12,12 @@
   <title>Simple Library</title>
 </head>
 
-<body class="bg-gray-50">
+<body class="">
   <div class="mx-auto mt-10 max-w-full sm:px-[5%] lg:w-full lg:max-w-screen-xl">
-    <div class="rounded-lg bg-slate-100 py-8 px-6 shadow">
-      <form action="#" class="mb-0 space-y-6">
-        <div class="sm:mx-auto sm:flex sm:space-x-6 lg:space-x-3">
-          <div class="sm:w-full lg:flex lg:w-[65%] lg:space-x-3">
+    <div class="rounded-lg bg-slate-100 py-8 px-6 shadow ">
+      <form action="#" class="sm:block mb-0 space-y-6 hidden">
+        <div class="sm:mx-auto space-y-6 sm:space-y-0 sm:flex sm:space-x-6 lg:space-x-3">
+          <div class="sm:w-full space-y-6 lg:space-y-0 lg:flex lg:w-[65%] lg:space-x-3">
             <!-- Title -->
             <div class="lg:w-full">
               <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
@@ -35,7 +35,7 @@
             </div>
           </div>
 
-          <div class="sm:w-full lg:flex lg:w-[35%] lg:space-x-3">
+          <div class="sm:w-full space-y-6 lg:space-y-0 lg:flex lg:w-[35%] lg:space-x-3">
             <!-- Pages -->
             <div class="lg:w-full">
               <label for="pages" class="block text-sm font-medium text-gray-700">Pages</label>
@@ -63,13 +63,16 @@
             class="w-full bg-blue-500 py-3 text-sm font-bold tracking-wider text-white focus:bg-blue-600 focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 lg:inline-block lg:w-1/6" />
         </div>
       </form>
+      <button id="newBookBtn"
+        class="block sm:hidden bg-gray-200 w-full px-6 py-3 text-gray-700 uppercase font-semibold transition-all bg-indigo-100 text-indigo-600">Add
+        New Book</button>
     </div>
 
-    <div class="mt-10 h-screen bg-gray-50">
-      <h1 class="text-xl mb-4 font-bold text-center">Simple Library</h1>
+    <div class="mt-10 h-screen">
+      <h1 class="text-4xl mb-4 font-bold text-center">Books</h1>
       <div id="bookList" class="py-8 px-6 overflow-auto rounded-lg shadow">
         <table class="w-full">
-          <thead class="bg-white border-b-2 border-gray-300">
+          <thead class="bg-gray-100 border-b-2 border-gray-300">
             <tr>
               <th class="p-3 text-sm font-semibold tracking-wide text-left">Title</th>
               <th class="p-3 text-sm font-semibold tracking-wide text-left hidden sm:table-cell">Author</th>
@@ -79,17 +82,7 @@
             </tr>
           </thead>
           <tbody id="tbody" class="divide-y divide-gray-200">
-            <tr>
-              <td class="p-3 text-sm text-gray-700 whitespace-nowrap">HarryPotter</td>
-              <td class="p-3 text-sm text-gray-700 whitespace-nowrap">JKRolling</td>
-              <td class="p-3 text-sm text-gray-700 whitespace-nowrap hidden sm:table-cell">745</td>
-              <td class="p-3 text-sm text-gray-700 whitespace-nowrap"><span
-                  class="p-1.5 text-xs bg-gray-200 text-gray-700 bg-opacity-70 rounded font-semibold uppercase tracking-wider">not
-                  read</span></td>
-              <td class="p-3 text-sm text-gray-700 whitespace-nowrap hidden sm:table-cell"><span
-                  class="p-1.5 text-xs bg-red-200 text-red-700 bg-opacity-70 rounded font-semibold uppercase tracking-wider">DELETE</span>
-              </td>
-            </tr>
+
           </tbody>
         </table>
       </div>
